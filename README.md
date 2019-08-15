@@ -22,7 +22,7 @@ Map-based visualization of the results of ukrainian president elections results 
 3. click
 4. read
 
-##Credits
+## Credits
 
 1. 25.08 - poorly working example with some mistakes
 2. 05.09 - working web page with cute visualization
