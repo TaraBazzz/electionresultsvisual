@@ -1,7 +1,7 @@
 # electionresultsvisual
  <snippet>
   <content><![CDATA[
-# ${1:Election 2019. results}
+# ${1: Project Name}
 
 Map-based visualization of the results of ukrainian president elections results of year 2019. Using pure JS, mainly d3.js for visualisation.
 
