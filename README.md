@@ -1,7 +1,5 @@
 # electionresultsvisual
-<snippet>
-  <content>
-    <snippet>
+ <snippet>
   <content><![CDATA[
 # ${1:Election 2019. results}
 
