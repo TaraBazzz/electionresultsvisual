@@ -14,7 +14,8 @@ Map-based visualization of the results of ukrainian president elections results 
 5. earning a good mark for this shuff
 
 ## Usage
-
+USE INDEX2.HTML 
+regular index.html that`s how I would write in normal life.
 1. open
 2. move
 3. click
