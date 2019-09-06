@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <title>Ukraine elections 2019</title>
+</head>
+<body>
+    <h1>Here are the results:</h1>
+    <div class="pathdiv">
+        <svg id="my_dataviz" width="100%" viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">    </svg>
+        <div class="description"></div>
+    </div>
+
+    <footer>
+        Info stealed from <a href="https://www.pravda.com.ua/articles/2019/04/21/7213071/">here</a> 
+    </footer>
+    
+    
+    
+<script>
+var div = d3.select("body").append("div")
+     .attr("class", "tooltip")
+     .style("opacity", 0);
+
+var svg = d3.select("svg");
+
+var projection = d3.geoNaturalEarth()
+.scale(3000.0)
+  .center([31.5,48]);
+
+d3.json("ADMINgeo.json", function(data){
+    svg.append("g")
+        .selectAll("path")
+        .data(data.features)
+        .enter().append("path")
+            .attr("fill", "#7c7c7c")
+            .attr("d", d3.geoPath()
+                .projection(projection)
+            )
+            .style("stroke", "#fff")
+    .on("mouseover", function(d){
+    d3.select(event.target)
+    .style("fill", "#69b3a2")
+    .style("cursor", "pointer");
+        div.transition()
+          .duration(100)
+          .style("opacity", 1);
+        div.html("<a>Hello, you there i`m going to be your info</a>")
+            .style("left", (d3.event.pageX + 40) + "px")			 
+            .style("top", (d3.event.pageY - 28) + "px");;
+    })
+    .on("mouseout", function(d){
+    d3.select(event.target)
+    .style("fill", "#7c7c7c")
+    .style("cursor", "default");
+        div.transition()
+          .duration(100)
+          .style("opacity", 1);
+        div.html("");
+    });
+                       
+    })
+
+</script>
+</body>
