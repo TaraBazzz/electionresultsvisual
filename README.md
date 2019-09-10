@@ -15,6 +15,9 @@ Map-based visualization of the results of ukrainian president elections results 
 
 ## Usage
 USE INDEX2.HTML!!!!!! 
+
+index.js - parser from web
+
 regular index.html - that`s how I would write in normal life.
 1. open
 2. move
